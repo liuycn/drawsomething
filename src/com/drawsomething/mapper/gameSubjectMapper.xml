@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.drawsomething.mapper.GameSubjectMapper">
+
+	<insert id="insertNewGameSubject" parameterType="com.drawsomething.entity.GameSubject">
+		INSERT INTO gamesubject(wordInfo,additionInfo,otherAdditionInfo,subjectStatus)VALUES(#{wordInfo},#{additionInfo},#{otherAdditionInfo},#{subjectStatus})
+	</insert>
+	
+	<select id="selectOneGameSubjectByRandom" resultType="com.drawsomething.entity.GameSubject">
+		SELECT wordInfo,additionInfo,otherAdditionInfo FROM gamesubject AS t1  
+	    JOIN (SELECT ROUND(RAND() * (SELECT MAX(subjectId) FROM gamesubject)) AS subjectId) AS t2 
+	    WHERE t1.subjectId >= t2.subjectId AND t1.subjectStatus=1 
+		ORDER BY t1.subjectId LIMIT 1
+	</select>
+	
+	<!-- 此SQL语句为一次性查询所有记录，改为分页查询
+	<select id="selectAllGameSubject" resultType="com.drawsomething.entity.GameSubject">
+		SELECT * FROM gamesubject WHERE subjectStatus=1
+	</select>
+	-->
+	
+	<select id="selectTotalGameSubCount" resultType="int">
+		SELECT COUNT(subjectStatus) FROM gamesubject WHERE subjectStatus=1
+	</select>
+	
+	<select id="selectGameSubForCurPage" resultType="com.drawsomething.entity.GameSubject">
+		SELECT * FROM gamesubject WHERE subjectStatus=1 ORDER BY subjectId ASC LIMIT #{position},#{unitCount}
+	</select>
+	<!-- 
+	SELECT * FROM gamesubject WHERE subjectStatus=1 
+	ORDER BY subjectId ASC LIMIT 0,3; 0即查询id为1-3的3条,1即查询id为2-4的3条 
+	-->
+	 
+	<update id="updateSubIdStatus" parameterType="int[]">
+		<!-- UPDATE gamesubject SET subjectStatus=0 WHERE subjectId IN (2,4); -->
+		UPDATE gamesubject SET subjectStatus=0 WHERE subjectId IN 
+		<foreach collection="array" item="subId" open="(" separator="," close=")">
+		#{subId}
+		</foreach>
+	</update>
+
+</mapper>

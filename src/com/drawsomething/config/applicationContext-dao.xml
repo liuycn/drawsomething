@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.0.xsd">
+
+<context:property-placeholder location="classpath:com/drawsomething/config/db.properties"/>
+
+<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource"><!-- commons-dbcp.jar:连接池使用到的数据源 --><!-- commons-pool-1.6.jar:bean的实例化、连接池 -->
+	<property name="driverClassName" value="${driver}"/>
+	<property name="url" value="${url}"/>
+	<property name="username" value="${username}"/>
+	<property name="password" value="${password}"/>
+	<property name="maxActive" value="10"/>
+	<property name="maxIdle" value="5"/>
+</bean>
+
+<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean"><!-- mybatis-spring-1.3.0 .jar ：创建-->
+	<!-- <property name="configLocation" value="conf.xml"></property> -->
+	<property name="dataSource" ref="dataSource"></property>
+	<property name="mapperLocations" value="classpath:com/drawsomething/mapper/*.xml"></property>
+	<!-- <property name="typeAliasesPackage" value="com.drawsomething.entity"></property> 大小写不敏感-->
+</bean>
+
+<!-- 批量产生mapper.java,id名即类的首字母小写
+<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+        <property name="basePackage" value="com.drawsomething.mapper"></property>
+</bean>
+-->
+
+<!-- 单个产生mapper.java -->
+<bean id="userMapper" class="org.mybatis.spring.mapper.MapperFactoryBean"><!--  mybatis-spring-1.3.0 .jar --><!-- spring-tx-4.3.2.RELEASE.jar：加载org.springframework.dao.support.DaoSupport.class -->
+	<!-- 指向mapper.xml对应的接口mapper.java -->
+	<property name="mapperInterface" value="com.drawsomething.mapper.UserMapper"></property>
+	<property name="sqlSessionFactory" ref="sqlSessionFactory"></property><!-- spring-jdbc-4.3.0.RELEASE.jar -->
+</bean>
+
+<bean id="gameSubjectMapper" class="org.mybatis.spring.mapper.MapperFactoryBean">
+	<property name="mapperInterface" value="com.drawsomething.mapper.GameSubjectMapper"></property>
+	<property name="sqlSessionFactory" ref="sqlSessionFactory"></property>
+</bean>
+
+</beans>

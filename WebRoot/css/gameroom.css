@@ -1,0 +1,95 @@
+@CHARSET "UTF-8";
+html,body{
+	margin:0;
+	padding:0;
+}
+html{
+	/*border:1px solid #FF0000;*/
+	height:99%;
+}
+body{
+	/*background-color:#F6F6F6;
+	overflow: hidden;*/
+	background: url('../picture/gamepagebgp.png') no-repeat;
+	height:100%;
+    width:100%;
+    background-size:cover;
+	font-family:'Arial','宋体',sans-serif;
+	/*border:1px solid #FDFDBD;*/
+}
+#mainContent{
+	float:left;
+	border-right:2px solid #FF9900;
+	width:75%;
+	height:100%;
+}
+#roomId{
+	/*border:1px solid #000000;*/
+	border-bottom:2px solid #FFCC33;
+	padding:20px 0 0 10px;
+	height:8%;
+	font-size:150%;
+}
+/*适用于导航
+#mainShowContent{
+	border:1px solid #00ff00;
+	width:75%;
+	position:absolute;
+	top:65px;
+	bottom: 0px;
+    left: 0px;
+}*/
+#mainShowContent{
+	/*border:2px solid #ff0000;*/
+	width:100%;
+	height:88%;
+}
+#secondaryContent{
+	margin:0 0 0 75%;
+	/*border:1px solid #ff00ff;*/
+	height:100%;
+}
+#preUserInfo{
+	text-align:center;
+	border-bottom:2px solid #FFCC33;
+	height:50%;
+}
+img#userProfilePicture{
+	margin-top:20px;
+	border:1px solid #008810;
+	width:50%;
+	height:50%;
+}
+p#preUserInfoContent{
+	font-family:'Comic Sans MS', cursive, sans-serif;
+	/*border:1px solid #008810;*/
+}
+/*测试专用
+#connectMessage{
+	height:5%;
+	border:1px solid #000000;
+}
+*/
+#showChatMessage{
+	font-family:'Comic Sans MS', cursive, sans-serif;
+	overflow:auto;
+	/*border:1px solid #ff8800;*/
+	height:40%;
+	font-size:105%;
+}
+#sendMessage{
+	margin-left:10px;
+	/*border:1px solid #000000;*/
+}
+button{
+	border-radius: 25px;
+    background:#BDE61A;
+}
+#changePage{
+	display:none;
+}
+span#systemMessage{
+	font-family:'Comic Sans MS', cursive, sans-serif;
+	color:#008810;
+	font-size:105%;
+}

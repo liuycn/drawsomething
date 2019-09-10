@@ -1,0 +1,17 @@
+@CHARSET "UTF-8";
+#changePageContent_eightusers{
+	display:none;
+}
+
+table{
+	margin:0 5%;
+	text-align:center;
+	/*border:1px solid #000000;*/
+	width:90%;
+	height:40%;
+}
+td{
+	/*border:1px solid #000000;*/
+	padding:2.5%;
+	height:25%;
+}

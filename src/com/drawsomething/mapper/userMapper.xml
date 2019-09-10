@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.drawsomething.mapper.UserMapper"><!-- UserMapper.java的路径 -->
+
+	<select id="getUserInfoForLogin" parameterType="int" resultType="com.drawsomething.entity.UserForLogin">
+		SELECT * FROM user WHERE userId=#{userId}
+	</select>
+	
+	<update id="updateUserScore">
+		UPDATE user SET score=#{score} WHERE userId=#{userId}
+	</update>
+
+	<select id="selectUsersForLeaderBoard" resultType="com.drawsomething.entity.UserForGame">
+		SELECT userName,score FROM user WHERE userStatus=2 ORDER BY score DESC LIMIT 10
+	</select>
+	
+	<insert id="insertNewUser" parameterType="com.drawsomething.entity.UserForLogin" useGeneratedKeys="true" keyProperty="userId">
+		INSERT INTO user(userName,score,userPwd,userStatus)VALUES(#{userName},#{score},#{userPwd},#{userStatus})
+	</insert>
+	
+</mapper>

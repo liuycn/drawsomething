@@ -1,0 +1,48 @@
+@CHARSET "UTF-8";
+html,body{
+	margin:0;
+	padding:0;
+}
+html{
+	height:99%;
+}
+body{
+	font-family:'Arial','宋体',sans-serif;
+	height:100%;
+}
+#header{
+	background-color:#76B34C;
+}
+form#addNewSubject{
+	margin:10% auto 0;
+	border:5px solid #65A23B;
+	padding:20px;
+	width:300px;
+}
+div.tableRow{
+	display:table-row;
+}
+div.tableRow p{
+	text-align:center;
+	display:table-cell;
+	/*border:1px solid red;*/
+	padding:10px 0;
+}
+.input{
+	height:30px;
+	width:200px;
+}
+span#promptMessage{
+	margin-left:12px;
+	color:#FF0000;
+	font-size:80%;
+}
+.button{	
+	border-radius:25px;
+    background:#BDE61A;
+    height:40px;
+    width:80px;
+    margin:10px 110px ;
+    font-size:100%;
+}
+

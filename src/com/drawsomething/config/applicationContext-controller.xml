@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xsi:schemaLocation="http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.0.xsd">
+   
+    <context:component-scan base-package="com.drawsomething.controller"></context:component-scan>
+	
+	<!-- springMVC的拦截器,用于拦截controller --> 
+	<mvc:interceptors>
+		<mvc:interceptor>
+			<!-- <mvc:mapping path="/**"/> 拦截一切请求包括css、js等静态资源，除了jsp -->
+			<mvc:mapping path="/user/**"/>
+			<mvc:mapping path="/game/**"/>
+			<mvc:exclude-mapping path="/user/login"/><!-- 若直接访问，方法体内检测null重定向到index.jsp -->
+			<mvc:exclude-mapping path="/user/register"/>
+	
+			<bean class="com.drawsomething.interceptor.LoadingJspPageInterceptor"></bean>	
+		</mvc:interceptor>
+	</mvc:interceptors>
+	
+    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name="prefix" value="/jsp/"></property>  
+        <property name="suffix" value=".jsp"></property>
+    </bean>
+
+	<mvc:view-controller path="loadingRegisterPage" view-name="register"/>
+    <mvc:view-controller path="game/gamelobby" view-name="gamelobby"/>
+    <mvc:view-controller path="game/loadingAddSubjectPage" view-name="infomana_jsp/addnewsubject"/>
+ 	 
+    <mvc:annotation-driven></mvc:annotation-driven> 
+    <mvc:resources location="/js/" mapping="/js/**"/>
+    <mvc:resources location="/css/" mapping="/css/**"/>
+    <mvc:resources location="/picture/" mapping="/picture/**"/>
+   
+</beans>

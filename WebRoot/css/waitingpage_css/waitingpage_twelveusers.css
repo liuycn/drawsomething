@@ -1,0 +1,16 @@
+@CHARSET "UTF-8";
+#changePageContent_twelveusers{
+	display:none;
+}
+
+table{
+	margin:5% 0;
+	text-align:center;
+	/*border:1px solid #000000;*/
+	width:100%;
+	
+}
+td{
+	/*border:1px solid #000000;*/
+	padding:0;
+}

@@ -1,0 +1,53 @@
+@CHARSET "UTF-8";
+html,body{
+	margin:0;
+	padding:0;
+}
+html{
+	height:99%;
+	/*border:1px solid #CCCC99;*/
+}
+body{
+	background-color:#87C45D;
+	font-family:'Arial','宋体',sans-serif;
+	height:100%;
+}
+#header{
+	text-align:center;
+	border:2px solid #76B34C;
+	height:60px;
+	background:url('../../picture/navwhite.png') no-repeat;
+}
+#preUserInfo{
+	float:right;
+	margin:0;
+	/*border:1px solid #ffff00;*/
+}
+#navigation{
+	float:left;
+	width:18%;
+	/*border:1px solid #ff0000;*/
+	text-align:center;
+}
+a{
+	/*border:1px solid #000000;*/
+	text-decoration:none;
+	color:#000000;
+}
+a:hover{
+	text-decoration:none;
+	color:#FFFFFF;
+}
+#mainContent{
+	background-color:#F6F6F6;
+	position:absolute;
+	margin-left:18%;
+	/*border:2px solid #0000ff;*/
+	width:82%;
+	top:65px;
+	right:0px;
+	bottom:0px;
+}
+
+
+

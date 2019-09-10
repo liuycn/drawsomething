@@ -1,0 +1,52 @@
+@CHARSET "UTF-8";
+html,body{
+	margin:0;
+	padding:0;
+}
+html{
+	height:99%;
+}
+body{
+	font-family:'Arial','宋体',sans-serif;
+	height:100%;
+}
+#header{
+	background-color:#76B34C;
+}
+table.showAllSubject{
+	width:80%;
+	margin:5% 10% 1%;
+	border-collapse:collapse;
+	text-align:center;
+}
+table.showAllSubject tr:nth-child(even){  
+    background-color:#76B34C;  
+}  
+table.showAllSubject tr:nth-child(odd){  
+    background-color:#99CD76;  
+}
+th.subjectTableColumn{
+	width:20%;
+}
+div#pageDiv{
+	/*border:1px solid red;*/
+	margin:10px auto;
+	width:330px;
+}
+a.page:hover{
+	color:#008810;
+}
+span#promptMessage{
+	margin-left:20%;
+	color:#FF0000;
+	font-size:80%;
+}
+.button{	
+	border-radius:25px;
+    background:#BDE61A;
+    height:40px;
+    width:80px;
+    margin-left:46%;
+    font-size:100%;
+}
+

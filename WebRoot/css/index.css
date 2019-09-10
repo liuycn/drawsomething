@@ -1,0 +1,45 @@
+@CHARSET "UTF-8";
+body{
+	background: url('../picture/index.png') no-repeat;
+    height:100%;
+    width:100%;
+    background-size:cover;
+	font-family:'Arial','宋体',sans-serif;
+	margin:0px;
+}
+div#title{
+	margin:70px auto 20px;
+	width:500px;
+}
+form#login{
+	background-color:#FFE4BB;
+	margin:0 auto;
+	border:5px solid #cd7841;
+	width:240px;
+	padding:10px 30px;
+}
+div.tableRow{
+	display:table-row;
+}
+div.tableRow p{
+	display:table-cell;
+	vertical-align:top;
+	/*border:1px solid red;*/
+	padding:10px 15px;
+}
+.input{
+	height:30px;
+	width:200px;
+}
+.buttonDiv{
+	/*border:1px solid black;*/
+	margin:5px 0;
+}
+.button{	
+	border-radius:25px;
+    background:#BDE61A;
+    height:40px;
+    width:80px;
+    margin-left:23px;
+    font-size:100%;
+}

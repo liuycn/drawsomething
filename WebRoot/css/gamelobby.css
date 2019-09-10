@@ -1,0 +1,123 @@
+@CHARSET "UTF-8";
+html,body{
+	margin:0;
+	padding:0;
+}
+html{
+	/*border:1px solid #CCCC99;*/
+	height:99%;
+}
+body{
+	background-color:#F6F6F6;
+	font-family:'Arial','宋体',sans-serif;
+	height:100%;
+}
+#mainContent{
+	float:left;
+	border-right:2px solid #FF9900;
+	width:75%;
+	height:100%;
+}
+#navigation{
+	border-bottom:2px solid #FFCC33;
+	padding-left:10px;
+	height:60px;
+}
+#chooseGame{
+	font-family: 'Microsoft YaHei','黑体',sans-serif;
+	/*border:1px solid #00ffff;*/
+	width:75%;
+	position:absolute;
+	top:70px;
+	bottom: 0px;
+    left: 0px;
+}
+table.chooseGameTable{
+	/*border:1px solid #ff0000;*/
+	width:90%;
+	height:80%;
+	margin:5% auto 0;
+}
+tr.chooseGameTable{
+	/*border:1px solid #00ff00;*/
+}
+td.chooseGameTable{
+	/*border:1px solid #0000ff;*/
+}
+.gameEntrance{
+	text-align:center;
+	font-size:250%;
+	width:70%;
+	height:40%;
+	margin:15% 15%;
+	padding-top:2%;
+}
+.gameEntrance{
+	border:5px solid #65A23B;
+	background-color:#99CD76;
+	border-radius: 15px;                      
+}
+.gameEntrance:hover{
+	border:5px solid #65A23B;
+	background-color:#DAEDCD;
+}
+a.selectUserNum{
+	/*border:1px solid #000000;*/
+	text-decoration:none;
+	color:#FFFFFF;
+}
+a.selectUserNum:hover{
+	text-decoration:none;
+	color:#65A23B;
+}
+#secondaryContent{
+	margin:0 0 0 75%;
+	/*border:1px solid #0000ff;*/
+	height:100%;
+}
+div#logoutDiv{
+	border:1px solid #F6F6F6;/*占位*/
+}
+a#logout{
+	float:right;
+	color:#008810;
+}
+a#logout:hover{
+	color:#000000;
+}
+#preUserInfo{	
+	font-family:'Comic Sans MS', cursive, sans-serif;
+	text-align:center;
+	margin-top:20px;
+	border-bottom:2px solid #FFCC33;
+	height:45%;
+}
+img#userProfilePicture{
+	border:1px solid #008810;
+	width:50%;
+	height:55%;
+}
+p#preUserInfoContent{
+	border:1px solid #008810;
+}
+#leaderBoard{
+	text-align:center;
+	font-family:'Comic Sans MS', cursive, sans-serif;
+	/*border:1px solid #000000;*/
+	height:45%;
+}
+h3#leaderBoardTitle{
+	/*border:1px solid #008810;*/
+	margin:0;
+}
+table.leaderBoardTable{
+	width:80%;
+	margin:0 10%;
+	border-collapse:collapse;
+}
+table.leaderBoardTable tr:nth-child(2n+1){  
+    background-color:#65A23B;  
+}  
+table.leaderBoardTable tr:nth-child(2n+2){  
+    background-color:#99CD76;  
+}  

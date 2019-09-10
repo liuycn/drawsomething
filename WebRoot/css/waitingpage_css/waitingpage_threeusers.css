@@ -1,0 +1,16 @@
+@CHARSET "UTF-8";
+#changePageContent_threeusers{
+	display:none;
+}
+table{
+	margin:10% 0 10% 10%;
+	text-align:center;
+	/*border:1px solid #000000;*/
+	width:90%;
+	height:50%
+}
+td{
+	/*border:1px solid #000000;*/
+	padding-right:10%;
+	width:30%;
+}

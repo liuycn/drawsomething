@@ -1,0 +1,22 @@
+@CHARSET "UTF-8";
+body{
+	background-color:#F6F6F6;
+	font-family:'Arial','宋体',sans-serif;
+	height:100%;
+}
+#navigation{
+	border:1px solid #000000;
+	padding-left:10px;
+	height:60px;
+}
+div#registerSuccess{
+	text-align:center;
+	margin:10% auto 0;
+	border:5px solid #65A23B;
+	width:240px;
+	padding:10px 30px;
+}
+a{
+	text-decoration:none;
+	color:#65A23B;
+}
